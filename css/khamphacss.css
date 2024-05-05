@@ -8,8 +8,9 @@
 a{
     text-decoration: none;
     color: #000000;
-    padding: 0%x;
+    padding: 0%;
     font-size: 20px;
+    
 }
 img{
     cursor: pointer;
@@ -47,7 +48,7 @@ nav{
     width: 16px;
 }
 .nav_middle .search_box{
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     margin-right: 15px;
     padding: 10px 12px;
     border-radius: 25px;
@@ -81,7 +82,7 @@ nav{
     width: fit-content;
     flex-wrap: wrap;
 }
-.shortcut a:first-child{
+.shortcut .explore{
     color: #ed3833;
 }
 .shortcut hr{
@@ -122,7 +123,7 @@ nav{
 }
 .container{
     background-color: rgb(255, 255, 255);
-    padding: 20px 2% 20px 17%;
+    padding: 20px 2% 20px 20%;
 }
 .large_container{
     padding-left: 7%;
@@ -134,20 +135,31 @@ nav{
     width: 100%;
     border-radius: 8px;
 }
+
+/* container */
+
 .list_container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(250px, 1fr));
+    display: flex;
+    flex-direction: column;
+    
     grid-column-gap: 16px;
     grid-row-gap: 30px;
     margin-top: 15px;
 }
+.vid_list{
+    display: flex;
+}
+
 .vid_list .thumbnail{
-    width: 100%;
+    width: 30%;
     border-radius: 5px;
+    padding-right: 0px;
 }
 .vid_list .flex_div{
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
     margin-top: 7px;
+    
 }
 .vid_list .flex_div img{
     width: 35px;
@@ -157,34 +169,58 @@ nav{
 .vid_list .flex_div .vid_info{
      color: #5a5a5a;
      font-size: 13px;
+     flex-grow: 1;
 }
 .vid_list .flex_div .vid_info a{
     color: #000;
     font-weight: 600;
     display: block;
     margin-bottom: 5px;
+    flex-grow: 1;
+}
+.vid_list {
+    display: flex;
+    margin-bottom: 20px; /* Khoảng cách giữa các video */
 }
 
-@media (max-width: 900px) {
-        .menu_icon{
-            display: none;
-        }
-        .sidebar{
-            display: none;
-        }
-        .container , .large_container{
-            padding-left: 5%;
-            padding-right: 5%;
-        } 
-        .nav_right img {
-            display: none;
-        }
-        .nav_right .user_icon{
-            display: block;
-            width: 30px;
-        }
-        .nav_middle .search_box input{
-            width: 100px;
-        }
+.vid_list .thumbnail {
+    width: 700%;
+}
+
+.vid_list img {
+    max-width: 200px;
+    height: auto;
+}
+
+.vid_info {
+    margin-left: 15px;
+    flex: 1;
+}
+
+/* Để đảm bảo tiêu đề không bị tràn ra khỏi vùng chứa */
+.vid_info a {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.trending_banner {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.trending_img {
+    width: 70px;
+    border-radius: 50%;
+    
+}
+
+.trending_text {
+    margin-left: 10px; /* Điều chỉnh khoảng cách giữa hình ảnh và văn bản nếu cần thiết */
 }
 
